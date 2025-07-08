@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yasser Games</title>
+  <style>
+    /* ==== RESET & BASE ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: #f1f1f1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ==== HEADER ==== */
+    header {
+      height: 100vh;
+      background: linear-gradient(#0e0e0e, #1a1a1a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .header-content {
+      max-width: 700px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .header-content h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #3a47d5, #00d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .header-content p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==== GAME SECTION ==== */
+    .games-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .games-section h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .game-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
+    }
+
+    .game-card::before {
+      content: '';
+      background: url("knightfall.png") center/cover no-repeat;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    .game-content {
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 2rem;
+    }
+
+    .game-content h3 {
+      font-size: 1.8rem;
+      color: #00cfff;
+      margin-bottom: 0.5rem;
+    }
+
+    .game-content p {
+      margin-bottom: 1rem;
+      color: #bbb;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      background: #00cfff;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #009ac9;
+    }
+
+    .btn.disabled {
+      background: #555;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #666;
+      margin-top: 4rem;
+    }
+
+    @media (min-width: 700px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Yasser Games</h1>
+      <p>Where pixels rise and legends fall ⚔️</p>
+    </div>
+  </header>
+
+  <section class="games-section">
+    <h2>🎮 My Projects</h2>
+    <div class="games-grid">
+
+      <!-- GAME 1 -->
+      <div class="game-card">
+        <div class="game-content">
+          <h3>KINGHFALL RUN</h3>
+          <p>Status: <strong style="color:#4caf50;">Released</strong></p>
+          <a href="https://uxrzz.itch.io/knightfall-run" target="_blank" class="btn">Play Now</a>
+        </div>
+      </div>
+
+      <!-- GAME 2 -->
+      <div class="game-card">
+        <div class="game-content">
+          <h3>THE BLADES OF THE FALLEN SUN</h3>
+          <p>Status: <strong style="color:#ffc107;">In Development</strong></p>
+          <a class="btn disabled">Coming Soon</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Yasser Raddi. Built with ☕ and pixel passion.
+  </footer>
+
+</body>
+</html>
